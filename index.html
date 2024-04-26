@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yahtzee</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+<header>
+    <h1>Yahtzee</h1>
+    <p class="start">
+        <input type="button" value="Start a new game" id="start" data-dice="start">
+    </p>
+</header>
+<div class="row-game">
+    <div class="column column-dice">
+        <h2>Dice area</h2>
+        <div id="dice" data-dice="dice"></div>
+        <p class="roll"><input type="button" value="Roll dice" id="roll" data-dice="roll"></p>
+        <p class="attempt">Attempt: <span id="throw" data-dice="throw">0</span> of 3</p>
+        <p class="info">Roll dice to play, you have a total of 13 turns (3 throws per turn). Click on a dice to set it apart from a new roll of dice.</p>
+        <p id="msg-error" data-msg="error" style="display: none;">This is an error</p>
+        <p id="msg-confirmation" data-msg="confirmation" style="display: none;">This is a confirmation. Game over.</p>
+    </div>
+    <div class="column column-score">
+        <h2>Score card</h2>
+        <table class="scoreboard">
+            <tr>
+                <td class="name">ones</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="ones"></td>
+            </tr>
+            <tr>
+                <td class="name">twos</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="twos"></td>
+            </tr>
+            <tr>
+                <td class="name">threes</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="threes"></td>
+            </tr>
+            <tr>
+                <td class="name">fours</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="fours"></td>
+            </tr>
+            <tr>
+                <td class="name">fives</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="fives"></td>
+            </tr>
+            <tr>
+                <td class="name">sixes</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="sixes"></td>
+            </tr>
+            <tr class="total">
+                <td class="name">Total</td>
+                <td class="number" id="subtotal" data-number="subtotal">0</td>
+            </tr>
+            <tr class="total">
+                <td class="name">Bonus</td>
+                <td class="number" id="bonus" data-number="bonus">0</td>
+            </tr>
+            <tr>
+                <td class="name">Three of a kind</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="three-kind"></td>
+            </tr>
+            <tr>
+                <td class="name">Four of a kind</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="four-kind"></td>
+            </tr>
+            <tr>
+                <td class="name">Full house</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="full"></td>
+            </tr>
+            <tr>
+                <td class="name">Small straight</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="small"></td>
+            </tr>
+            <tr>
+                <td class="name">Large straight</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="large"></td>
+            </tr>
+            <tr>
+                <td class="name">Chance</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="chance"></td>
+            </tr>
+            <tr>
+                <td class="name">Yahtzee</td>
+                <td class="number"><input type="button" value="0" class="button-score" data-score="five-kind"></td>
+            </tr>
+            <tr class="total">
+                <td class="name">Total score</td>
+                <td class="number" data-number="total">0</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

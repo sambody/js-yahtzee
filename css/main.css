@@ -1,0 +1,1487 @@
+/*
+==============================================
+ CSS VARIABLES
+==============================================
+*/
+:root {
+    /* layout */
+    --container-max-width: 1100px;
+    --row-gap: 30px;
+    --row-gap-small: 15px;
+    --row-gap-large: 50px;
+    --column-gap: 20px;
+    --column-gap-small: 10px;
+    --column-gap-large: 30px;
+
+    /* brand colors */
+    --primary-color-lighter: #de8585;
+    --primary-color-light: #c54545;
+    --primary-color: #982929;
+    --primary-color-dark: #731e1e;
+    --primary-color-darker: #491212;
+
+    --accent-color-lighter: #de8585;
+    --accent-color-light: #c54545;
+    --accent-color: #982929;
+    --accent-color-dark: #731e1e;
+    --accent-color-darker: #491212;
+
+    --secundary-color-light: var(--orange-light);
+    --secundary-color: var(--orange);
+    --secundary-color-dark: var(--orange-dark);
+
+    /* named colors, adapt to brand / design colors */
+    --red: #982929;
+    --red-light: #c54545;
+    --red-dark: #731e1e;
+    --blue: #1257be;
+    --blue-light: #457ed3;
+    --blue-dark: #0c3b81;
+    --teal: #107979;
+    --teal-light: #1fa6a6;
+    --teal-dark: #0d5656;
+    --yellow: #e5d846;
+    --yellow-light: #ecec86;
+    --yellow-dark: #abab17;
+    --orange: #d35f2d;
+    --orange-light: #e08862;
+    --orange-dark: #9b3e15;
+    --beige: #e5e5cb;
+    --brown: #654129;
+    --brown-light: #8d6042;
+    --brown-dark: #492d1b;
+    --pink: #fdadb8;
+    --purple: #792479;
+    --purple-light: #9f469f;
+    --purple-dark: #5e1d5e;
+
+    --grey-lighter: #dadada;
+    --grey-light: #a6a6a6;
+    --grey: #7a7a7a;
+    --grey-dark: #575757;
+    --grey-darker: #424242;
+
+    /* typography */
+    --font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    --font-family-special: var(--font-family);
+    --font-size: 1.6rem;
+    --line-height: 1.6;
+    --color: black;
+    --color-invert: white;
+
+    --heading-font-family: var(--font-family-special);
+    --heading-color: var(--color);
+    --heading-line-height: 1.25;
+
+    /* links */
+    --link-color: var(--primary-color);
+    --link-background: transparent;
+    --link-text-decoration: none;
+    --link-font-weight: normal;
+        --link-color-hover: var(--primary-color);
+        --link-background-hover: transparent;
+        --link-text-decoration-hover: underline;
+
+    --nav-link-font-size: var(--font-size);
+    --nav-link-line-height: var(--line-height);
+    --nav-link-color: var(--primary-color);
+    --nav-link-background: var(--grey-lighter);
+    --nav-link-text-decoration: none;
+    --nav-link-font-weight: normal;
+        --nav-link-color-hover: var(--primary-color);
+        --nav-link-background-hover: var(--grey-light);
+        --nav-link-text-decoration-hover: underline;
+        --nav-active-link-color-hover: var(--primary-color);
+        --nav-active-link-background-hover: var(--grey-light);
+
+    /* forms */
+    --input-field-border-color: #a4a4a4;
+    --input-field-border-radius: 5px;
+    --ipnut-field-color: var(--color);
+    --input-field-font-size: var(--font-size);
+    --input-field-line-height: var(--line-height);
+    --input-placeholder-color: grey;
+
+    --button-color: white;
+    --button-background: var(--primary-color-light);
+    --button-border-color: var(--primary-color-dark);
+    --button-font-weight: bold;
+    --button-border-radius: 6px;
+        --button-color-hover: white;
+        --button-background-hover: var(--primary-color);
+        --button-border-color-hover: var(--primary-color-dark);
+
+    --button-outlined-color: var(--primary-color);
+    --button-outlined-background: transparent;
+    --button-outlined-border-color: var(--primary-color);
+        --button-outlined-color-hover: var(--primary-color-light);
+        --button-outlined-background-hover: transparent;
+        --button-outlined-border-color-hover: var(--primary-color-light);
+
+    /* other */
+    --focus-color: black;
+    --focus-background: #ffff56;
+    --error-color: darkred;
+    --success-color: darkgreen;
+
+    --border-width: 1px;
+    --border-color: grey;
+    --image-border-width: 1px;
+    --image-border-color: #d0d0d0;
+    --radius: 4px;
+    --box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+    --transition: 0.15s all;
+}
+
+/* ================================ */
+
+/*
+==============================================
+ PAGE LAYOUT
+==============================================
+*/
+/*<editor-fold desc="Page layout">*/
+html {
+    box-sizing: border-box;
+    height: 100%;
+    /*height: 100vh;*/
+    padding: 0;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit; /* Universal box sizing with inheritance */
+    -webkit-tap-highlight-color: transparent; /* suppressing the tap highlight */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Page layout mobile first
+*/
+body {
+    min-height: 100%;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.page-section {
+    /*outline: 1px solid green;*/
+    /*padding-left: var(--column-gap);*/
+    /*padding-right: var(--column-gap);*/
+}
+
+.page-section > .container {
+    /*outline: 1px solid red;*/
+    padding: var(--row-gap) var(--column-gap);
+}
+
+.page-section-content {
+    background: #ececec;
+}
+
+.page-section-content > .container {
+    padding-bottom: 1px;
+}
+
+/* content columns, if any */
+.content-main,
+.content-sub {
+    padding: 3rem var(--column-gap);
+    padding-bottom: var(--row-gap);
+}
+
+@media (min-width: 600px) {
+
+    .page-section > .container {
+        width: 100%;
+        max-width: var(--container-max-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-section > .container.fluid {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: var(--column-gap);
+        padding-right: var(--column-gap);
+    }
+    /* content columns */
+    .page-section-content > .container {
+        display: grid;
+        grid-template-columns: 7fr 3fr;
+        justify-content: space-between;
+        gap: var(--column-gap);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .content-main {
+        grid-column: 1;
+    }
+
+    .content-sub {
+        grid-column: 2 / span 1;
+    }
+
+    .content-main.content-full-width {
+        grid-column: 1 / -1;
+    }
+
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="Grids">*/
+/* ---------------- Predefined grids
+*/
+/* Option 1, single row, any number of columns:
+   parent .row, child .column (with optional .span-2...)
+
+   Option 2, one or more rows of children, predefined number of columns:
+   parent .row-3-columns, child .column (with optional .span-2...)
+*/
+.row,
+.row-2-columns,
+.row-3-columns,
+.row-4-columns,
+.row-5-columns,
+.row-6-columns,
+.row-7-columns,
+.row-8-columns,
+.row-9-columns,
+.row-10-columns,
+.row-11-columns,
+.row-12-columns {
+    margin-bottom: 0;
+    padding-bottom: var(--row-gap);
+}
+.column {
+    /*outline: 2px solid orange;*/
+    padding-bottom: var(--row-gap);
+    margin-bottom: 0;
+}
+.column:last-child {
+    /*outline: 2px solid orange;*/
+    padding-bottom: 0;
+}
+
+@media (min-width: 600px) {
+
+    .row,
+    .row-2-columns,
+    .row-3-columns,
+    .row-4-columns,
+    .row-5-columns,
+    .row-6-columns,
+    .row-7-columns,
+    .row-8-columns,
+    .row-9-columns,
+    .row-10-columns,
+    .row-11-columns,
+    .row-12-columns {
+        display: grid;
+        gap: var(--row-gap) var(--column-gap);
+    }
+    .row {
+        grid-template-columns: repeat(auto-fit, minmax(0%, 1fr)); /* single row, any number */
+    }
+    .row-2-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .row-3-columns {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .row-4-columns {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .row-5-columns {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .row-6-columns {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .row-7-columns {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .row-8-columns {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .row-9-columns {
+        grid-template-columns: repeat(9, 1fr);
+    }
+    .row-10-columns {
+        grid-template-columns: repeat(10, 1fr);
+    }
+    .row-11-columns {
+        grid-template-columns: repeat(11, 1fr);
+    }
+    .row-12-columns {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .column {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .span-1 {
+        grid-column: span 1;
+    }
+    .span-2 {
+        grid-column: span 2;
+    }
+    .span-3 {
+        grid-column: span 3;
+    }
+    .span-4 {
+        grid-column: span 4;
+    }
+    .span-5 {
+        grid-column: span 5;
+    }
+    .span-6 {
+        grid-column: span 6;
+    }
+    .span-7 {
+        grid-column: span 7;
+    }
+    .span-8 {
+        grid-column: span 8;
+    }
+    .span-9 {
+        grid-column: span 9;
+    }
+    .span-10 {
+        grid-column: span 10;
+    }
+    .span-11 {
+        grid-column: span 11;
+    }
+    .span-12 {
+        grid-column: span 12;
+    }
+    .span-full {
+        grid-column: 1 / -1;
+    }
+    .start-at-1 {grid-column-start: 1;}
+    .start-at-2 {grid-column-start: 2;}
+    .start-at-3 {grid-column-start: 3;}
+    .start-at-4 {grid-column-start: 4;}
+    .start-at-5 {grid-column-start: 5;}
+    .start-at-6 {grid-column-start: 6;}
+    .start-at-7 {grid-column-start: 7;}
+    .start-at-8 {grid-column-start: 8;}
+    .start-at-9 {grid-column-start: 9;}
+    .start-at-10 {grid-column-start: 10;}
+    .start-at-11 {grid-column-start: 11;}
+    .start-at-12 {grid-column-start: 12;}
+
+}
+/*</editor-fold>*/
+
+/* ================================ */
+
+/*
+==============================================
+ Typography, images, tables
+==============================================
+*/
+/*<editor-fold desc="Typography">*/
+html {
+    font-size: 62.5%;
+    /* Now use rem (or em) for other font-sizes: 1rem = 10px */
+    /* rem are proportional to this root only; em are proportional to parent, so may cascade... */
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--color);
+}
+
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: 400;
+}
+p:last-child, dd:last-child, li:last-child {
+    margin-bottom: 0;
+}
+
+p, dl, ul {
+    margin-top: 0;
+}
+
+ol p, ul p, ol ol, ul ul, label p, dt p, dd p, table p {
+    font-size: inherit; /* if using em */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+
+    font-family: var(--heading-font-family);
+    font-weight: bold;
+    line-height: var(--heading-line-height);
+    color: var(--heading-color);
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #1c1c1c;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+p:first-child {
+    margin-top: 0;
+}
+
+/* ---------------- Links
+*/
+a {
+    color: var(--link-color);
+    text-decoration: var(--link-text-decoration);
+    background: var(--link-background);
+    transition: var(--transition);
+    font-weight: var(--link-font-weight);
+}
+
+a:active,
+a:focus,
+a:hover {
+    color: var(--link-color-hover);
+    text-decoration: var(--link-text-decoration-hover);
+    background: var(--link-background-hover);
+}
+
+/* ---------------- Text specials
+*/
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+small {
+    font-size: 0.8em;
+}
+
+mark {
+    background: #FFFF7F;
+    color: #1c1c1c;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ---------------- Lists
+*/
+ul {
+    list-style: disc;
+    margin-left: 22px;
+    padding-left: 0;
+}
+
+ul li {
+    margin-left: 0;
+    margin-bottom: 1.2rem;
+    padding-left: 18px;
+}
+
+ul ul {
+    margin-bottom: 0;
+}
+
+ol {
+    margin-left: 0;
+}
+
+ol li {
+    margin-bottom: 1.2rem;
+}
+
+/* Inline (horizontal) list
+*/
+.list-horizontal {
+    margin: 0 0 1em 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.list-horizontal > li {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+/* list with no bullets, but still vertical
+*/
+.list-no-bullets {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.list-no-bullets li {
+    margin-left: 0;
+    padding-left: 0;
+    background: none;
+}
+
+/* ---------------- Definition lists
+*/
+dl{}
+dt {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+dd {
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+/*</editor-fold>*/
+
+/*
+==============================================
+ Images, media
+==============================================
+*/
+/*<editor-fold desc="Images, media">*/
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img.img-border {
+    border: var(--image-border-width) solid var(--image-border-color);
+}
+
+img.center {
+    display: block;
+    margin: 0 auto 1rem;
+    clear: both;
+}
+
+.center img {
+    /* class on img container */
+    display: block;
+    margin: 0 auto;
+}
+
+img.image-styled {
+    border: 5px solid var(--primary-color);
+}
+
+a img {
+    transition: var(--transition);
+}
+
+a:hover img {
+    /*opacity: 0.8;*/
+}
+
+@media (min-width: 600px) {
+    .float-left {
+        float: left;
+        margin: 0 15px 5px 0;
+    }
+
+    .float-right {
+        float: right;
+        margin: 0 0 5px 15px;
+    }
+}
+/*</editor-fold>*/
+
+/*
+==============================================
+ TABLES, HR
+*/
+/*<editor-fold desc="Tables, hr">*/
+hr {
+    clear: both;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: var(--row-gap-large) 0;
+    padding: 0;
+}
+
+table {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 6px 10px 7px 0;
+    border-top: 1px solid #D6D6D6;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: top;
+    text-align: left;
+}
+
+thead:first-child tr th,
+thead:first-child tr td {
+    border-top: 0;
+}
+/*</editor-fold>*/
+
+/*
+==============================================
+ MESSAGES - Errors and confirmations on top of page
+==============================================
+*/
+/*<editor-fold desc="Messages on top of page">*/
+.message {
+    background: #eeeeee;
+    color: black;
+    margin: 0 0 30px 0;
+    padding: 20px;
+    font-size: var(--font-size);
+}
+.message h2, h3, h4, h5, h6, p, li {
+    color: inherit;
+}
+.message ul {
+    list-style: circle;
+    margin: 0 0 0 1rem;
+}
+.message li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.message-error {
+    background: #f6d5d5;
+    color: var(--error-color);
+}
+.message-success {
+    background: #d2e7d2;
+    color: var(--success-color);
+}
+/*</editor-fold>*/
+
+/* ================================ */
+
+/*
+==============================================
+ FORM styles
+==============================================
+*/
+/*<editor-fold desc="Forms - Fonts">*/
+form {
+    font-size: var(--font-size);
+    line-height: var(--input-field-line-height);
+}
+input,
+select,
+textarea {
+    color: var(--ipnut-field-color);
+    font-size: var(--font-size);
+    line-height: var(--input-field-line-height);
+}
+/*</editor-fold>*/
+
+/* ---------------- Input fields
+*/
+/*<editor-fold desc="Forms - Input fields">*/
+input {
+    margin: 0;
+}
+input[type="email"],
+input[type="file"],
+input[type="image"],
+input[type="password"],
+input[type="search"],
+input[type="text"],
+input[type="url"],
+input[type="tel"],
+input[type="range"],
+input[type="number"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="color"],
+select,
+textarea {
+    /*width: 100%;*/
+    /*display: block;*/
+    padding: 5px 6px;
+    border: 1px solid var(--input-field-border-color);
+    border-radius: var(--input-field-border-radius);
+    background: #fff;
+}
+input.size-small {
+    width: 100px;
+}
+
+input[type="email"]:disabled,
+input[type="file"]:disabled,
+input[type="image"]:disabled,
+input[type="password"]:disabled,
+input[type="search"]:disabled,
+input[type="text"]:disabled,
+input[type="url"]:disabled,
+input[type="tel"]:disabled,
+input[type="range"]:disabled,
+input[type="number"]:disabled,
+input[type="time"]:disabled,
+input[type="datetime"]:disabled,
+input[type="datetime-local"]:disabled,
+input[type="date"]:disabled,
+input[type="month"]:disabled,
+input[type="week"]:disabled,
+input[type="color"]:disabled,
+select:disabled,
+textarea:disabled {
+    background: #e0e0e0;
+}
+
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[type="image"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="number"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="color"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #1c1c1c;
+    /*box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);*/
+    background: #fff;
+}
+
+textarea {
+    /*display: block;*/
+    resize: vertical;
+    height: 90px;
+}
+
+textarea[rows] {
+    /*height: auto;*/
+}
+
+/* Input placeholder
+*/
+::placeholder {
+    color: var(--input-placeholder-color);
+    opacity: 1;
+}
+
+/* Select/option dropdowns
+*/
+select {
+    border-radius: 0;
+}
+
+select,
+input[type="file"] {
+    height: auto;
+}
+
+.input[readonly] {
+    border-style: dotted;
+    cursor: not-allowed;
+
+    color: #777;
+}
+
+.input[disabled] {
+    border-color: #ccc;
+    cursor: not-allowed;
+    background: #eee;
+}
+
+.input[invalid] {
+    box-shadow: 0 0 0 3px rgba(255, 12, 83, 0.2);
+}
+/*</editor-fold>*/
+
+/* ---------------- Forms - Buttons
+*/
+/*<editor-fold desc="Forms - Buttons">*/
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+a.button {
+    box-sizing: border-box;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 1px 25px 1px;
+    border-radius: var(--button-border-radius);
+    border: 0 solid var(--button-border-color);
+    transition: var(--transition);
+    background: var(--button-background);
+
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--button-color);
+    font-weight: var(--button-font-weight);
+    text-align: center;
+    text-decoration: none;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+a.button:hover {
+    cursor: pointer;
+    background: var(--button-background-hover);
+
+    color: var(--button-color-hover);
+    text-decoration: none;
+}
+
+input[type="submit"].outlined,
+input[type="reset"].outlined,
+input[type="button"].outlined,
+button.outlined,
+a.button.outlined {
+    color: var(--button-outlined-color);
+    background: var(--button-outlined-background);
+    border-color: var(--button-outlined-border-color);
+}
+
+input[type="submit"].outlined:hover,
+input[type="reset"].outlined:hover,
+input[type="button"].outlined:hover,
+button.outlined:hover,
+a.button.outlined:hover {
+    color: var(--button-outlined-color-hover);
+    background: var(--button-outlined-background-hover);
+    border-color: var(--button-outlined-border-color-hover);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active,
+.button:active {
+    background: var(--button-background-hover);
+    /*border-color: #ff3300;*/
+
+    color: white;
+}
+
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus,
+button:focus,
+.button:focus {
+    background: var(--button-background-hover);
+    outline: 1px dotted black;
+    outline-offset: 2px;
+
+    color: var(--button-color-hover);
+}
+
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled:hover,
+input[type="reset"]:disabled:hover,
+input[type="button"]:disabled:hover {
+    background: #c0c0c0;
+    color: #5b5b5b;
+    border-color: #c0c0c0;
+    cursor: not-allowed;
+}
+/*</editor-fold>*/
+
+/* ---------------- Checkboxes and radios
+*/
+/*<editor-fold desc="Forms - Checkboxes, radios">*/
+input[type="radio"],
+input[type="checkbox"] {
+    border-width: 0;
+    width: auto;
+    position: relative;
+    margin: 0 7px 0 0;
+    top: 0;
+}
+/*</editor-fold>*/
+
+/* ---------------- Form inline messages
+*/
+/*<editor-fold desc="Forms - Errors etc ">*/
+/* input fields with error (class .has-error on a parent, or .is-error on input */
+.has-error input[type="email"],
+.has-error input[type="file"],
+.has-error input[type="image"],
+.has-error input[type="password"],
+.has-error input[type="search"],
+.has-error input[type="text"],
+.has-error input[type="url"],
+.has-error input[type="tel"],
+.has-error input[type="range"],
+.has-error input[type="number"],
+.has-error input[type="time"],
+.has-error input[type="datetime"],
+.has-error input[type="datetime-local"],
+.has-error input[type="date"],
+.has-error input[type="month"],
+.has-error input[type="week"],
+.has-error input[type="color"],
+.has-error select,
+.has-error textarea,
+input[type="email"].is-error,
+input[type="file"].is-error,
+input[type="image"].is-error,
+input[type="password"].is-error,
+input[type="search"].is-error,
+input[type="text"].is-error,
+input[type="url"].is-error,
+input[type="tel"].is-error,
+input[type="range"].is-error,
+input[type="number"].is-error,
+input[type="time"].is-error,
+input[type="datetime"].is-error,
+input[type="datetime-local"].is-error,
+input[type="date"].is-error,
+input[type="month"].is-error,
+input[type="week"].is-error,
+input[type="color"].is-error,
+select.is-error,
+textarea .is-error{
+    border-color: #a80a0a;
+    outline: 3px solid #dcad9d;
+}
+
+.form-error {
+    /*border: 1px solid var(--error-color);*/
+    padding: 2px 7px;
+    margin-top: 3px;
+    /*background: #f5dbdb;*/
+
+    color: var(--error-color);
+    font-size: var(--font-size);
+}
+
+.form-help {
+    color: #808080;
+    margin-top: 5px;
+}
+/*</editor-fold>*/
+
+/* ---------------- Form layout
+*/
+/*<editor-fold desc="Forms - Layout">*/
+form {
+    margin-bottom: 0;
+}
+
+form p {
+    margin: 0;
+}
+
+label,
+.label,
+.form-buttons {
+    display: block;
+    vertical-align: top;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+.form-layout-stacked label:first-child {
+    padding-top: 0;
+}
+
+.form-wrap-label {}
+.form-wrap-inputs {
+    /*padding-top: 5px;*/
+}
+
+.form-wrap-inputs label,
+.form-wrap-inputs .label {
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+.form-wrap-inputs label:last-child,
+.form-wrap-inputs .label:last-child {
+    margin-bottom: 0;
+}
+
+.wrap-checkbox,
+.wrap-radio {
+    margin-bottom: 5px;
+}
+.wrap-checkbox:last-child,
+.wrap-radio:last-child {
+    margin-bottom: 0;
+}
+
+.wrap-checkbox input,
+.wrap-radio input {
+    /*display: inline-block;*/
+}
+
+.wrap-checkbox label,
+.wrap-checkbox div.label,
+.wrap-radio label,
+.wrap-radio div.label {
+    display: inline-block;
+    width: auto;
+    padding-right: 10px;
+    padding-top: 0;
+    margin-right: 0;
+}
+
+.form-wrap-inputs.inline .label-checkbox,
+.form-wrap-inputs.inline .label-radio {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+/* wraps label and input */
+.form-group:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+/* Extra optional class "form-layout-columns" for layout in two columns on desktop
+ */
+@media (min-width: 600px) {
+
+    .form-layout-grid .form-group {
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr; /* adapt proportion */
+        gap: var(--column-gap) var(--row-gap-small);
+    }
+
+    .form-layout-grid > label,
+    .form-layout-grid > .label {
+        margin-top: 0;
+        padding-top: 5px; /* to align with field text */
+        /*text-align: right; */
+    }
+
+    .form-layout-grid .form-group-input {
+        grid-column: 2;
+    }
+
+    .form-layout-grid .form-position-left {
+        /*grid-column: 1 / span 1;*/
+        /*grid-column-start: 1;*/
+    }
+
+    .form-layout-grid .form-position-right,
+    .form-layout-grid .form-error,
+    .form-layout-grid .form-description {
+        padding-top: 0;
+        /*grid-column-start: 2;*/
+    }
+
+    .form-layout-grid .form-position-fullwidth {
+        /*grid-column: 1 / span 2;*/
+    }
+
+    .form-layout-grid .form-buttons {
+        /*grid-column-start: 2;*/
+        margin-top: 0;
+    }
+
+    .form-layout-grid .label-checkbox,
+    .form-layout-grid .label-radio,
+    .form-layout-grid .label.wrap-checkbox {
+        text-align: left; /* when using option */
+    }
+
+}
+
+/* inline form, all on one line */
+.form-layout-inline label {
+    margin-top: 2rem;
+}
+.form-layout-inline label:first-child { /* keep as separate rule */
+    margin-top: 0;
+}
+.form-layout-inline input[type="submit"] {
+    display: block;
+    margin-top: 1rem;
+}
+
+@media (min-width: 600px) {
+
+    .form-layout-inline {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: right;
+        gap: 6px;
+    }
+    .form-layout-inline label {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .form-layout-inline input[type="email"],
+    .form-layout-inline input[type="text"]{
+        width: 200px;
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    .form-layout-inline input[type="submit"] {
+        display: inline-block;
+        margin-top: 0;
+    }
+
+}
+/*</editor-fold>*/
+
+/* ================================ */
+
+/*
+==============================================
+ SECTION - SITE HEADER
+==============================================
+*/
+/*<editor-fold desc="Section - Header">*/
+header {
+    background-color: var(--grey-dark);
+    padding: 15px 0;
+    color: white;
+    text-align: center;
+}
+header h1 {
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+
+/* ---------------- Site logo
+*/
+.site-logo {
+    margin-bottom: 1.5rem;
+}
+.site-logo a {
+    display: inline-block;
+}
+
+.site-logo a:hover {
+    text-decoration: none;
+    background: transparent;
+}
+
+.site-logo a img {
+    width: 40px;
+}
+
+.site-logo a:hover img {
+    opacity: 1;
+}
+
+
+/* ---------------- Main navigation
+*/
+.wrap-nav-main {
+    /*display: none;*/
+}
+
+.nav-main {
+    margin: 0;
+    padding: 0;
+}
+.nav-main ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-main li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: none;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.nav-main a {
+    display: block;
+    margin: 0;
+    padding: 7px 10px;
+    background: var(--nav-link-background);
+
+    font-size: var(--nav-link-font-size);
+    line-height: var(--nav-link-font-weight);
+    text-decoration: var(--nav-link-text-decoration);
+}
+/* current page */
+.nav-main .is-active > a {
+    background: #efc2d2;
+}
+
+/* hover */
+.nav-main a:active,
+.nav-main a:focus,
+.nav-main a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+@media (min-width: 600px) {
+
+    .page-section-header > .container {
+        height: 140px;
+        display: flex;
+        justify-content: left;
+        align-items: center; /* default is stretch */
+        gap: 4rem;
+    }
+    .site-logo {
+        margin-bottom: 0;
+    }
+    .nav-main {
+        /*margin-left: auto;*/
+    }
+    .nav-main ul {
+        display: flex;
+        gap: 6px;
+    }
+    .nav-main li {
+        border-bottom: none;
+    }
+
+}
+/*</editor-fold>*/
+
+/*
+==============================================
+ SECTION Content
+*/
+/*<editor-fold desc="Section - Content">*/
+.row-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.row-game .column {
+    padding: 15px 25px 40px;
+    text-align: center;
+}
+.column-dice {
+    background-color: #bfd396;
+}
+.column-score {
+    background-color: #ececa5;
+}
+
+/* Dice
+*/
+#dice {
+    min-height: 81px;
+    margin-top: 50px;
+    margin-bottom: 160px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+#dice img {
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 6px 6px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    opacity: 0;
+}
+#dice img.fadeIn {
+    transition: opacity 0.5s linear;
+    opacity: 1;
+}
+#dice img.selected {
+    transform: translate(0, 60px) rotate(3deg);
+    /*opacity: 0.55;*/
+}
+.attempt {
+    font-weight: bold;
+    font-size: 18px;
+}
+#msg-error {
+    font-weight: bold;
+    color: red;
+}
+#msg-confirmation {
+    font-weight: bold;
+    color: green;
+}
+
+
+/* Scores
+*/
+table.scoreboard {
+    border-collapse: collapse;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.scoreboard td {
+    border-color: #bbbb82;
+    padding: 2px;
+}
+.scoreboard a.button,
+.scoreboard input[type="button"] {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+td.name {
+    text-align: left;
+    padding-left: 8px;
+}
+td.number {
+    text-align: center;
+    width: 70px;
+}
+.total .name {
+    font-weight: bold;
+}
+.total .number {
+    font-weight: bold;
+}
+.total .name,
+.total .number {
+    background-color: #e9f3ca;
+}
+
+/*</editor-fold>*/
+
+
+
+/* ================================ */
+
+/*
+==============================================
+ HELPER CLASSES - show/hide etc
+==============================================
+*/
+/*<editor-fold desc="Helper classes">*/
+
+.border { /* use .img-border for images */
+    border: var(--border-width) solid var(--border-color);
+}
+.clear {
+    clear: both;
+}
+@supports (display: flow-root) {
+    .clearfix {
+        display: flow-root;
+    }
+}
+@supports not (display: flow-root) {
+    .clearfix::after { /* do not combine with flex parent */
+        content: "";
+        clear: both;
+        display: block;
+        /*overflow: auto;  alternative */
+    }
+}
+
+/* ---------------- Show / hide
+*/
+/* Visually hidden, screen reader only or when focus received using tab */
+.screenreader-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+/* Note: To hide non focusable elements from screen reader, use aria-hidden="true" attribute */
+
+/* other */
+.hide-on-mobile,
+.hide-on-tablet {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .hide-on-desktop {
+        display: none;
+    }
+    .hide-on-mobile {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hide-on-tablet {
+        display: block;
+    }
+}
+
+/* Wrap tables or pre elements in a div with this class */
+.allow-horizontal-scroll {
+    overflow-x: scroll;
+}
+
+/* Hide tap highlight (on mobile/tablets) on buttons that don't link to pages, eg. toggles */
+.hide-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* IOS specifics */
+@media screen and (max-width: 769px) {
+    /* Absolute measure here */
+    body {
+        /* Stop iPhone/iPad from scaling text */
+        -webkit-text-size-adjust: none;
+    }
+}
+/*</editor-fold>*/
