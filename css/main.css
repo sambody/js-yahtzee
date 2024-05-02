@@ -1315,6 +1315,9 @@ header h1 {
     padding: 15px 25px 40px;
     text-align: center;
 }
+.row-game .column .info {
+    text-align: left;
+}
 .column-dice {
     background-color: #bfd396;
 }
