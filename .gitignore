@@ -4,6 +4,7 @@ vendor/
 */vendor/
 *.phpunit.cache/
 *.env
+todo-yahtzee.md
 
 .DS_Store
 .DS_Store?
